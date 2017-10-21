@@ -76,13 +76,26 @@ $$(document).on('deviceready', function deviceIsReady() {
   console.log('Device is ready!');
 });
 
-$$(document).on('click', '.panel .search-link', function searchLink() {
+$$(document).on('click', '.panel .order-confirmation-link', function searchLink() {
   // Only change route if not already on the index
   //  It would be nice to have a better way of knowing this...
-  var indexPage = $$('.page[data-page=index]');
-  if (indexPage.hasClass('cached')) {
+  var indexPage2 = $$('.page[data-page=index]');
+  if (indexPage2.hasClass('cached')) {
     mainView.router.load({
       pageName: 'index',
+      animatePages: false,
+      reload: true,
+    });
+  }
+});
+
+$$(document).on('click', '.panel .items-selection-link', function searchLink() {
+  // Only change route if not already on the index
+  //  It would be nice to have a better way of knowing this...
+  var indexPage = $$('.page[data-page=page2]');
+  if (indexPage.hasClass('cached')) {
+    mainView.router.load({
+      pageName: 'page2',
       animatePages: false,
       reload: true,
     });
