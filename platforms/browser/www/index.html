@@ -77,7 +77,7 @@
                 <tr class="app-contents-table">
                   <th>Tips</th>
                   <td />
-                  <th><input style="border: solid 1px rgba(151, 151, 151, 0.38); height: 20px;width: 35px; font-size: 15px; " type="text" id="order-percent-tips" onblur="percentTips(); getBalance()"><span style="font-size: 15px;"> % </th>
+                  <th><input style="border: solid 1px rgba(151, 151, 151, 0.38); height: 20px;width: 35px; font-size: 15px; " type="text" id="order-percent-tips" onblur="percentTips(); getBalance()"><span style="font-size: 15px;"> % </span></th>
                 </tr>
                 <tr class="app-contents-table">
                   <th style="color: white">Tips</th>
@@ -275,11 +275,11 @@
                   <td>Price</td>
                 </tr>
               </table>
-            <div class="app-button-split grad" onclick="goToItemsSelection()" style="padding-bottom: : 10px;">
+            <div class="app-button-split grad" onclick="goToItemsSelection()" style="padding-bottom: 10px;">
               Edit Order
             </div>
             <div class="app-button-split grad" style="margin-bottom: 35px;" onclick="goToProcessingBill()">
-              Proceed
+              Confirm Bill
             </div>
             </div>
 
@@ -292,13 +292,13 @@
             <div class="app-nav grad">Processing Bill</div>
             <div class="app-contents-processing-bill">
               <div class="app-processing-bill-circles">
-                <img class="circ" src="img/jiayee.jpeg"/>
-                <img class="circ-fade" src="img/Mark.jpeg"/>
-                <img class="circ-fade" src="img/James.jpeg"/>
+                <img class="circ" src="img/Mark.jpeg"/>
+                <img class="circ" src="img/James.jpeg"/>
+                <img class="circ" src="img/jiayee.jpeg" style="border: solid 4px #00c1a5"/>
               </div>
-              <span class="app-processing-bill-text">Waiting on 2 others to confirm their bills</span>
+              <span class="app-processing-bill-text">Everyone in your party has confirmed their orders!</span>
               <div class="app-button-split grad" onclick="goToPaymentComplete()">
-                Proceed
+               Tap to Pay
               </div>
             </div>
           </div>
@@ -312,7 +312,7 @@
               <div class="app-payment-successful-circle">
                 <img class="app-payment-successful-tick" src="img/ticktick.png" />
               </div>
-              <span class="app-payment-successful-text">Payment of <span class="accent">$24.56</span> has been made to The Venetian Cafe. </span>
+              <span class="app-payment-successful-text">Payment of <span class="accent">$13.84</span> has been made to The Venetian Cafe. </span>
             </div>
           </div>
         </div>
