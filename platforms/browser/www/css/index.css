@@ -300,6 +300,14 @@ body {
     border-radius: 25px;
 }
 
+.circ-small {
+    max-width: 30px;
+    max-height: 30px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
 .circ-fade {
     max-width: 50px;
     max-height: 50px;

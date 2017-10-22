@@ -20,5 +20,10 @@ function get_order() {
     json["tax"] = (tax_price/100).toFixed(2);
     json["total"] =(total_price/100).toFixed(2);
 
+        console.log(json);
+
+    return json;
+
+
     return json;
 }
