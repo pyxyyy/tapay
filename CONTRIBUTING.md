@@ -1,6 +1,6 @@
 ## Contributing
 
-Thank you for your interest in contributing to the Star Track PhoneGap Example App.
+Thank you for your interest in contributing to the Hello World PhoneGap Template.
 
 #### Issues
 
@@ -18,5 +18,5 @@ All contributions (feature or bug fix) should start with an issue first.
 - Open a [Pull Request][pull-request]
 
 
-[issue-tracker]: https://github.com/phonegap/phonegap-app-star-track/issues
-[pull-request]: https://github.com/phonegap/phonegap-app-star-track/pulls
+[issue-tracker]: https://github.com/phonegap/phonegap-template-hello-world/issues
+[pull-request]: https://github.com/phonegap/phonegap-template-hello-world/pulls
