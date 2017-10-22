@@ -115,7 +115,7 @@
                 </tr>
               </table>
             </div>
-            <div class="app-button-split grad" onclick="goToItemsSelection()">
+            <div class="app-button-split-bill grad" onclick="goToItemsSelection()">
               Split Bill
             </div>
           </div>
@@ -128,7 +128,7 @@
 
             <div class="app-nav grad" style="height: 65px;">Items Selection</div>
 
-            <div class="app-contents" id="eClairs-not-clicked" onclick="toggle('eClairs-clicked', 'eClairs-not-clicked', 'eclair')">
+            <div class="app-contents" id="eClairs-not-clicked" onclick="toggle('eClairs-clicked', 'eClairs-not-clicked')">
               <img src="/img/eclairs-fade.png" style="width: 100%; height: 170px;">
               <table class="app-contents-table-subtotal" id="eclair" style="margin-top: -25px;width: 100%; margin-bottom: 11px;">
               <tr class="app-contents-table-balance">
@@ -137,7 +137,7 @@
               </tr>
             </table>
             </div>
-            <div class="app-contents" id="eClairs-clicked" onclick="toggle('eClairs-clicked', 'eClairs-not-clicked', 'eclair')" style="background-color:#0CBEBC;">
+            <div class="app-contents" id="eClairs-clicked" onclick="toggle('eClairs-clicked', 'eClairs-not-clicked')" style="background-color:#0CBEBC;">
               <img src="/img/choc-eclairs.jpg" style="width: 100%; height: 170px;">
               <table class="app-contents-table-subtotal" id="eclair" style="margin-top: -25px;width: 100%; margin-bottom: 11px;color: white;">
               <tr class="app-contents-table-balance">
@@ -247,7 +247,7 @@
             </table>
             </div>
 
-            <div class="app-button-split grad" onclick="goToBillSummary()">
+            <div class="app-button-split-bill grad" onclick="goToBillSummary()">
               Proceed
             </div>
 
@@ -260,7 +260,7 @@
 
             <div class="app-nav grad">Bill Summary</div>
 
-            <div class="app-contents">
+            <div class="app-contents-bill-summary">
               <table class="app-contents-table-main">
                 <tr class="app-contents-header">
                   <th>Item</th>
@@ -301,12 +301,12 @@
                 </tr>
               </table>
 
-            </div>
             <div class="app-button-split grad" onclick="goToItemsSelection()">
               Edit Order
             </div>
             <div class="app-button-split grad" onclick="goToProcessingBill()">
               Proceed
+            </div>
             </div>
 
           </div>
@@ -315,34 +315,36 @@
         <div id="processing-bill" class="app-nav">
 
           <div class="app">
-
             <div class="app-nav grad">Processing Bill</div>
-
-            <div class="app-contents">
-
+            <div class="app-contents-processing-bill">
+              <div class="app-processing-bill-circles">
+                <img class="circ" src="img/gauri.jpeg"/>
+                <img class="circ" src="img/pyxy.jpeg"/>
+                <img class="circ" src="img/drashti.jpeg"/>
+                <img class="circ" src="img/hamsyari.jpeg"/>
+                <img class="circ-fade" src="img/gauri.jpeg"/>
+              </div>
+              <span class="app-processing-bill-text">Waiting on 1 other to confirm their bill</span>
+              <div class="app-button-split grad" onclick="goToPaymentComplete()">
+                Proceed
+              </div>
             </div>
-            
-            <div class="app-button-split grad" onclick="goToPaymentComplete()">
-              Proceed
-            </div>
-
           </div>
         </div>
 
         <div id="payment-complete" class="app-nav">
 
           <div class="app">
-
             <div class="app-nav grad">Payment Complete</div>
-
-            <div class="app-contents">
-
+            <div class="app-contents-payment-successful">
+              <div class="app-payment-successful-circle">
+                <img class="app-payment-successful-tick" src="img/tick.svg" />
+              </div>
+              <span class="app-payment-successful-text">Payment of <span class="accent">$24.56</span> has been made to The Venetian Cafe. </span>
+              <div class="app-button-split grad" onclick="goToHome()">
+                Home
+              </div>
             </div>
-            
-            <div class="app-button-split grad" onclick="goToHome()">
-              Home
-            </div>
-
           </div>
         </div>
 
