@@ -25,5 +25,4 @@ function get_order() {
     return json;
 
 
-    return json;
 }
