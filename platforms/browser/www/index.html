@@ -48,7 +48,7 @@
     <body onload="goToHome()">
       <div class="app">
         <div id="order-confirmation" class="app-nav">
-          <div class="app">
+          <div class="app" >
             <div class="app-nav grad">Order Confirmation</div>
             <div class="app-contents">
               <table class="app-contents-table-main">
@@ -122,17 +122,74 @@
 
         </div>
 
-        <div id="items-selection" class="app-nav">
+        <div id="items-selection" class="app-nav" style="padding-bottom: 30px;">
 
-          <div class="app">
+          <div class="app-scroll">
 
-            <div class="app-nav grad" style="padding-top: 20px;">Items Selection</div>
+            <div class="app-nav grad" style="height: 65px;">Items Selection</div>
 
             <div class="app-contents">
-              
+              <img src="/img/eclairs-fade.png" style="width: 100%; height: 170px;">
             </div>
+            <table class="app-contents-table-subtotal" style="margin-top: -25px;width: 100%; margin-bottom: 5px;">
+              <tr class="app-contents-table-balance">
+                <td>Chocolate Eclair</td>
+                <td><span class="app-contents-table-main">$11.00</span></td>
+              </tr>
+            </table>
+
+            <div class="app-contents">
+              <img src="/img/Chicken-Linguine-faded.png" style="width: 100%; height: 170px;">
+            </div>
+            <table class="app-contents-table-subtotal" style="margin-top: -25px;width: 100%; margin-bottom: 5px;">
+              <tr class="app-contents-table-balance">
+                <td>Chicken Linguine</td>
+                <td><span class="app-contents-table-main">$11.00</span></td>
+              </tr>
+            </table>
+
+            <div class="app-contents">
+              <img src="/img/Chicken-Linguine-faded.png" style="width: 100%; height: 170px;">
+            </div>
+            <table class="app-contents-table-subtotal" style="margin-top: -25px;width: 100%; margin-bottom: 5px;">
+              <tr class="app-contents-table-balance">
+                <td>Chicken Linguine</td>
+                <td><span class="app-contents-table-main">$11.00</span></td>
+              </tr>
+            </table>
+
+            <div class="app-contents">
+              <img src="/img/pep-pizza-faded.png" style="width: 100%; height: 170px;">
+            </div>
+            <table class="app-contents-table-subtotal" style="margin-top: -25px;width: 100%; margin-bottom: 5px;">
+              <tr class="app-contents-table-balance">
+                <td>Pepperoni Pizza</td>
+                <td><span class="app-contents-table-main">$11.00</span></td>
+              </tr>
+            </table>
+
+            <div class="app-contents">
+              <img src="/img/calamari-faded.png" style="width: 100%; height: 170px;">
+            </div>
+            <table class="app-contents-table-subtotal" style="margin-top: -25px;width: 100%; margin-bottom: 5px;">
+              <tr class="app-contents-table-balance">
+                <td>Calamari Fries</td>
+                <td><span class="app-contents-table-main">$11.00</span></td>
+              </tr>
+            </table>
+
+            <div class="app-contents">
+              <img src="/img/pad-thai-faded.png" style="width: 100%; height: 170px;">
+            </div>
+            <table class="app-contents-table-subtotal" style="margin-top: -25px;width: 100%; margin-bottom: 5px;">
+              <tr class="app-contents-table-balance">
+                <td>Pad Thai Noodles</td>
+                <td><span class="app-contents-table-main">$11.00</span></td>
+              </tr>
+            </table>
+
             <div class="app-button-split grad" onclick="goToBillSummary()">
-              Proceed
+              proceed
             </div>
 
           </div>
@@ -142,10 +199,10 @@
 
           <div class="app">
 
-            <div class="app-nav grad" style="padding-top: 20px;">Bill Summary</div>
+            <div class="app-nav grad">Bill Summary</div>
 
             <div class="app-contents">
-              
+
             </div>
             <div class="app-button-split grad" onclick="goToItemsSelection()">
               Edit Order
@@ -161,10 +218,10 @@
 
           <div class="app">
 
-            <div class="app-nav grad" style="padding-top: 20px;">Processing Bill</div>
+            <div class="app-nav grad">Processing Bill</div>
 
             <div class="app-contents">
-              
+
             </div>
             
             <div class="app-button-split grad" onclick="goToPaymentComplete()">
@@ -178,10 +235,10 @@
 
           <div class="app">
 
-            <div class="app-nav grad" style="padding-top: 20px;">Payment Complete</div>
+            <div class="app-nav grad">Payment Complete</div>
 
             <div class="app-contents">
-              
+
             </div>
             
             <div class="app-button-split grad" onclick="goToHome()">

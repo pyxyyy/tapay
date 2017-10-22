@@ -46,6 +46,16 @@ body {
     justify-items: center;
 }
 
+.app-scroll {
+    font-family: "Avenir Next", sans-serif;
+    position:absolute;             /* position in the center of the screen */
+    width:100%;                   /* text area width */
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
 @keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }
