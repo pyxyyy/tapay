@@ -49,7 +49,81 @@
 
   <div class="app">
 
-    <div id="order-confirmation" class="app-nav" style="padding-top: 20px;">Order Confirmation <i class="fa fa-home" onclick="document.getElementById('home').style.display = 'block';document.getElementById('order-confirmation').style.display = 'none';"></i></div>
+    <div id="order-confirmation" class="app-nav">
+
+      <div class="app">
+    <div class="app-nav">Order Confirmation<i class="fa fa-home" style="display: inline;" onclick="document.getElementById('home').style.display = 'block';document.getElementById('order-confirmation').style.display = 'none';"></i></div>
+    <div class="app-contents">
+        <table class="app-contents-table-main">
+            <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Cheeseburger</td>
+                <td>1</td>
+                <td>$30.60</td>
+            </tr>
+            <tr>
+                <td>Chicken Linguine</td>
+                <td>2</td>
+                <td>$12.50</td>
+            </tr>
+            <tr>
+                <td>Cheeseburger</td>
+                <td>1</td>
+                <td>$30.60</td>
+            </tr>
+            <tr>
+                <td>Chicken Linguine</td>
+                <td>2</td>
+                <td>$12.50</td>
+            </tr>
+            <tr>
+                <td>Chicken Rice</td>
+                <td>2</td>
+                <td>$12.50</td>
+            </tr>
+        </table>
+        <table class="app-contents-table-subtotal">
+            <tr>
+                <td>Subtotal</td>
+                <td style="padding: 20px;"/>
+                <td>Price</td>
+            </tr>
+            <tr class="app-contents-table">
+                <th>Tax</th>
+                <td />
+                <th>Price</th>
+            </tr>
+            <tr class="app-contents-table">
+                <th>Total</th>
+                <td />
+                <th>Price</th>
+            </tr>
+            <tr class="app-contents-table">
+                <th>Tips</th>
+                <td />
+                <th>USD</th>
+            </tr>
+            <input class="app-tips-input1"/>
+            <span class="app-tips-percent">%</span>
+            <span class="app-tips-equals">=</span>
+            <input class="app-tips-input2"/>
+            <tr class="app-contents-table-balance">
+                <td>Balance Due</td>
+                <td />
+                <td>Price</td>
+            </tr>
+        </table>
+    </div>
+    <div class="app-button-split" onclick="splitBill()">
+        Split Bill
+    </div>
+</div>
+
+    </div>
 
     <div id="items-selection" class="app-nav" style="padding-top: 20px;">Items Selection <i class="fa fa-home" onclick="document.getElementById('home').style.display = 'block';document.getElementById('items-selection').style.display = 'none';"></i></div>
 
@@ -77,12 +151,16 @@
   </div>
 
 
+<script>
+    function splitBill() {
 
-  <script type="text/javascript" src="cordova.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
-  <script type="text/javascript">
+    }
+</script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
     app.initialize();
-  </script>
+</script>
 
 </body>
 

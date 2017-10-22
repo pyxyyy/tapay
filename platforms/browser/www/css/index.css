@@ -25,6 +25,7 @@ body {
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color: white;
+    color: black;
     font-family: "Avenir Next", sans-serif;
     font-size:12px;
     height:100%;
@@ -35,40 +36,14 @@ body {
 
 /* Portrait layout (default) */
 .app {
-    color: white;
     font-family: "Avenir Next", sans-serif;
     position:absolute;             /* position in the center of the screen */
     height:100%;                   /* text area height */
     width:100%;                   /* text area width */
     text-align:center;
-}
-
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
-}
-
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
-}
-
-.event.listening {
-    background-color: white;
-    display:block;
-}
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
 }
 
 @keyframes fade {
@@ -89,6 +64,7 @@ h1 {
 }
 
 .app-nav {
+    color: white;
     width: 100%;
     height: 8%;
     background-color: #009688;
@@ -97,6 +73,117 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.app-contents {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.app-contents-table {
+    color: black;
+    font-family: "Avenir Next", sans-serif;
+    font-weight: normal;
+    width: 90%;
+    margin-top: 40px;
+    margin-left: 30px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.app-contents-table th {
+    font-weight: normal;
+    padding-bottom: 15px;
+}
+
+.app-contents-table td {
+    font-weight: lighter;
+}
+
+.app-contents-table-main {
+    color: black;
+    font-family: "Avenir Next", sans-serif;
+    font-weight: normal;
+    width: 90%;
+    margin-top: 40px;
+    margin-left: 30px;
+    font-size: 18px;
+    text-align: left;
+    /* border: solid; */
+}
+
+.app-contents-table-main th {
+    font-weight: normal;
+    padding-bottom: 15px;
+}
+
+.app-contents-table-main td {
+    font-weight: lighter;
+}
+
+.app-contents-table-subtotal {
+    color: black;
+    font-family: "Avenir Next", sans-serif;
+    font-weight: normal;
+    width: 90%;
+    margin-top: 40px;
+    margin-left: 30px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.app-contents-table-balance td {
+    padding-top: 40px;
+}
+
+.app-tips-input1 {
+    position: fixed;
+    border: solid 1px rgba(151, 151, 151, 0.38);
+    bottom: 192px;
+    left: 235px;
+    width: 50px;
+    border-radius: 3px;
+}
+
+.app-tips-input2 {
+    position: fixed;
+    border: solid 1px rgba(151, 151, 151, 0.38);
+    bottom: 192px;
+    left:100px;
+    width: 50px;
+    border-radius: 3px;
+}
+
+.app-tips-percent {
+    font-size: 18px;
+    bottom: 188px;
+    left: 160px;
+    position: fixed;
+}
+
+.app-tips-equals {
+    font-size: 20px;
+    bottom: 188px;
+    left: 195px;
+    position: fixed;
+}
+
+.app-button-split {
+    margin-top: 20px;
+    background-color: #009688;
+    width: 90%;
+    height: 40px;
+    margin-left: 20px;
+    text-align: center;
+    color: white;
+    font-family: "Avenir Next", sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 25px;
 }
 
 #grad {
