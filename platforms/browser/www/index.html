@@ -40,6 +40,7 @@
   <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
   <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <title>Tapay</title>
 </head>
 
@@ -51,67 +52,43 @@
           <div class="app" >
             <div class="app-nav grad">Order Confirmation</div>
             <div class="app-contents">
-              <table class="app-contents-table-main">
+              <table class="app-contents-table-main" id="order-items">
                 <tr class="app-contents-header">
                   <th>Item</th>
-                  <th>Qty</th>
                   <th>Price</th>
-                </tr>
-                <tr>
-                  <td>Cheeseburger</td>
-                  <td>1</td>
-                  <td>$30.60</td>
-                </tr>
-                <tr>
-                  <td>Chicken Linguine</td>
-                  <td>2</td>
-                  <td>$12.50</td>
-                </tr>
-                <tr>
-                  <td>Cheeseburger</td>
-                  <td>1</td>
-                  <td>$30.60</td>
-                </tr>
-                <tr>
-                  <td>Chicken Linguine</td>
-                  <td>2</td>
-                  <td>$12.50</td>
-                </tr>
-                <tr>
-                  <td>Chicken Rice</td>
-                  <td>2</td>
-                  <td>$12.50</td>
                 </tr>
               </table>
               <table class="app-contents-table-subtotal">
                 <tr>
                   <td>Subtotal</td>
-                  <td style="padding: 20px;"/>
-                  <td>Price</td>
+                  <td style="color: white">jhghhgh</td>
+                  
+                  <td id="order-subtotal"></td>
                 </tr>
                 <tr class="app-contents-table">
                   <th>Tax</th>
                   <td />
-                  <th>Price</th>
+                  <th id="order-tax"></th>
                 </tr>
                 <tr class="app-contents-table">
                   <th>Total</th>
                   <td />
-                  <th>Price</th>
+                  <th id="order-total"></th>
                 </tr>
                 <tr class="app-contents-table">
                   <th>Tips</th>
                   <td />
-                  <th>USD</th>
+                  <th><input style="border: solid 1px rgba(151, 151, 151, 0.38); height: 20px;width: 35px; font-size: 15px; " type="text" id="order-percent-tips" onblur="percentTips(); getBalance()"><span style="font-size: 15px;"> % </th>
                 </tr>
-                <input class="app-tips-input1"/>
-                <span class="app-tips-percent">%</span>
-                <span class="app-tips-equals">=</span>
-                <input class="app-tips-input2"/>
-                <tr class="app-contents-table-balance">
+                <tr class="app-contents-table">
+                  <th style="color: white">Tips</th>
+                  <td />
+                  <th><input style="border: solid 1px rgba(151, 151, 151, 0.38); height: 20px;width: 35px;font-size: 15px;" type="text" id="order-amount-tips" onblur="amountTips(); getBalance()"><span style="font-size: 13px;"> $</span></th>
+                </tr>
+                <tr class="app-contents-table-balance" style="padding-top: 0px;">
                   <td>Balance Due</td>
                   <td />
-                  <td>Price</td>
+                  <td id="order-balance"></td>
                 </tr>
               </table>
             </div>
@@ -428,6 +405,101 @@
             document.getElementById(id).style.display = 'block';
             document.getElementById(id_toggle).style.display = 'none';
           }
+        }
+
+        //Get the order
+        function get_order() {
+            let xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "https://apisandbox.dev.clover.com:443/v3/merchants/KAHSXBYJW39EJ/orders/9TJ7PEEA6F5X2?expand=lineItems&access_token=2e0d0bab-2dca-bdaf-fc47-809789b4d60b", false);
+            xhttp.send();
+            var foodItems = JSON.parse(xhttp.response).lineItems.elements;
+            var json = JSON.parse(xhttp.response);
+
+            var subtotal_price = 0;
+            for (i=0; i<foodItems.length;i++){
+                subtotal_price +=foodItems[i].price;
+            }
+            var tax_price = 0.081 * subtotal_price;
+            var total_price = tax_price + subtotal_price
+
+
+            json["subtotal"] = (subtotal_price/100).toFixed(2);
+            json["tax"] = (tax_price/100).toFixed(2);
+            json["total"] =(total_price/100).toFixed(2);
+
+            var list = json.lineItems.elements;
+            var subtotal = json.subtotal;
+            var tax = json.tax;
+            var total = json.total;
+
+
+            console.log(json);
+
+            for(var i=0; i<list.length; i++){
+              var price = list[i].price/100;
+              var fixedPrice = price.toFixed(2);
+              $('#order-items').append('<tr><td>'+ list[i].name + '</td><td>' + '$' + fixedPrice + '</td></tr>');
+            }
+
+            document.getElementById("order-subtotal").innerHTML = '$' + subtotal;
+            document.getElementById("order-tax").innerHTML = '$' + tax;
+            document.getElementById("order-total").innerHTML = '$' + total;
+
+            return json;
+
+        }
+
+        function get_json(){
+          let xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "https://apisandbox.dev.clover.com:443/v3/merchants/KAHSXBYJW39EJ/orders/9TJ7PEEA6F5X2?expand=lineItems&access_token=2e0d0bab-2dca-bdaf-fc47-809789b4d60b", false);
+            xhttp.send();
+            var foodItems = JSON.parse(xhttp.response).lineItems.elements;
+            var json = JSON.parse(xhttp.response);
+
+            var subtotal_price = 0;
+            for (i=0; i<foodItems.length;i++){
+                subtotal_price +=foodItems[i].price;
+            }
+            var tax_price = 0.081 * subtotal_price;
+            var total_price = tax_price + subtotal_price
+
+
+            json["subtotal"] = (subtotal_price/100).toFixed(2);
+            json["tax"] = (tax_price/100).toFixed(2);
+            json["total"] =(total_price/100).toFixed(2);
+
+            return json;
+        }
+
+        function getBalance(){
+          var total = get_json().total;
+          var amountTips = document.getElementById("order-amount-tips").value;
+          var balance = Number(amountTips) + Number(total);
+
+          document.getElementById("order-balance").innerHTML = balance;
+        }
+
+        function percentTips(){
+          var total = get_json().total;
+          var percentTips = document.getElementById("order-percent-tips").value;
+          var amountTips = document.getElementById("order-amount-tips").value;
+          var hundred = 100;
+
+          var percentOfTip = Number(percentTips)/Number(hundred);
+          var tip = Number(total)*percentOfTip;
+          var totalAmountTips = Number(tip);
+          totalAmountTips = Math.round(totalAmountTips * 100) / 100;
+          document.getElementById("order-amount-tips").value = totalAmountTips;
+        }
+
+        function amountTips(){
+          var total = get_json().total;
+          var percentTips = document.getElementById("order-percent-tips").value;
+          var amountTips = document.getElementById("order-amount-tips").value;
+
+          var percentOfTip = (amountTips/total)*100;
+          percentOfTip = Math.round(percentOfTip * 100) / 100;
+          document.getElementById("order-percent-tips").value = percentOfTip;
         }
 
       </script>
