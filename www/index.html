@@ -45,7 +45,7 @@
 
 <body>
   <div class="app">
-    <body onload="document.getElementById('items-selection').style.display = 'none'; document.getElementById('order-confirmation').style.display = 'none';document.getElementById('bill-summary').style.display = 'none';document.getElementById('processing-bill').style.display = 'none';document.getElementById('payment-complete').style.display = 'none';">
+    <body onload="goToHome()">
 
 
 
@@ -55,7 +55,7 @@
 
           <div class="app">
 
-            <div class="app-nav" id="grad1">Order Confirmation<i class="fa fa-home" style="display: inline;" onclick="document.getElementById('home').style.display = 'block';document.getElementById('order-confirmation').style.display = 'none';"></i></div>
+            <div class="app-nav" id="grad1">Order Confirmation</div>
             <div class="app-contents">
               <table class="app-contents-table-main">
                 <tr class="app-contents-header">
@@ -121,20 +121,81 @@
                 </tr>
               </table>
             </div>
-            <div class="app-button-split" id="grad" onclick="splitBill()">
+            <div class="app-button-split" id="grad" onclick="goToItemsSelection()">
               Split Bill
             </div>
           </div>
 
         </div>
 
-        <div id="items-selection" class="app-nav" style="padding-top: 20px;">Items Selection <i class="fa fa-home" onclick="document.getElementById('home').style.display = 'block';document.getElementById('items-selection').style.display = 'none';"></i></div>
+        <div id="items-selection" class="app-nav">
 
-        <div id="bill-summary" class="app-nav" style="padding-top: 20px;">Bill Summary <i class="fa fa-home" onclick="document.getElementById('home').style.display = 'block';document.getElementById('bill-summary').style.display = 'none';"></i></div>
+          <div class="app">
 
-        <div id="processing-bill" class="app-nav" style="padding-top: 20px;">Processing Bill <i class="fa fa-home" onclick="document.getElementById('home').style.display = 'block';document.getElementById('processing-bill').style.display = 'none';"></i></div>
+            <div id="grad1" class="app-nav" style="padding-top: 20px;">Items Selection</div>
 
-        <div id="payment-complete" class="app-nav" style="padding-top: 20px;">Payment Completed <i class="fa fa-home" onclick="document.getElementById('home').style.display = 'block';document.getElementById('payment-complete').style.display = 'none';"></i></div>
+            <div class="app-contents">
+              
+            </div>
+            <div class="app-button-split" id="grad" onclick="goToBillSummary()">
+              Proceed
+            </div>
+
+          </div>
+        </div>
+
+        <div id="bill-summary" class="app-nav">
+
+          <div class="app">
+
+            <div id="grad1" class="app-nav" style="padding-top: 20px;">Bill Summary</div>
+
+            <div class="app-contents">
+              
+            </div>
+            <div class="app-button-split" id="grad" onclick="goToItemsSelection()">
+              Edit Order
+            </div>
+            <div class="app-button-split" id="grad" onclick="goToProcessingBill()">
+              Proceed
+            </div>
+
+          </div>
+        </div>
+
+        <div id="processing-bill" class="app-nav">
+
+          <div class="app">
+
+            <div id="grad1" class="app-nav" style="padding-top: 20px;">Processing Bill</div>
+
+            <div class="app-contents">
+              
+            </div>
+            
+            <div class="app-button-split" id="grad" onclick="goToPaymentComplete()">
+              Proceed
+            </div>
+
+          </div>
+        </div>
+
+        <div id="payment-complete" class="app-nav">
+
+          <div class="app">
+
+            <div id="grad1" class="app-nav" style="padding-top: 20px;">Payment Complete</div>
+
+            <div class="app-contents">
+              
+            </div>
+            
+            <div class="app-button-split" id="grad" onclick="goToHome()">
+              Home
+            </div>
+
+          </div>
+        </div>
 
         <div id="home">
 
@@ -155,7 +216,17 @@
 
 
       <script>
-        function splitBill() {
+
+        function goToHome(){
+          document.getElementById('order-confirmation').style.display = 'block'; 
+          document.getElementById('items-selection').style.display = 'none';
+          document.getElementById('bill-summary').style.display = 'none';
+          document.getElementById('processing-bill').style.display = 'none';
+          document.getElementById('payment-complete').style.display = 'none';
+          document.getElementById('home').style.display = 'none';
+        }
+
+        function goToItemsSelection() {
           document.getElementById('items-selection').style.display = 'block';
           document.getElementById('order-confirmation').style.display = 'none';
           document.getElementById('bill-summary').style.display = 'none';
@@ -163,6 +234,34 @@
           document.getElementById('payment-complete').style.display = 'none';
           document.getElementById('home').style.display = 'none';
         }
+
+        function goToBillSummary() {
+          document.getElementById('bill-summary').style.display = 'block'; 
+          document.getElementById('order-confirmation').style.display = 'none';
+          document.getElementById('items-selection').style.display = 'none';
+          document.getElementById('processing-bill').style.display = 'none';
+          document.getElementById('payment-complete').style.display = 'none';
+          document.getElementById('home').style.display = 'none';
+        }
+
+        function goToProcessingBill(){
+          document.getElementById('processing-bill').style.display = 'block'; 
+          document.getElementById('order-confirmation').style.display = 'none';
+          document.getElementById('items-selection').style.display = 'none';
+          document.getElementById('bill-summary').style.display = 'none';
+          document.getElementById('payment-complete').style.display = 'none';
+          document.getElementById('home').style.display = 'none';
+        }
+
+        function goToPaymentComplete(){
+          document.getElementById('payment-complete').style.display = 'block'; 
+          document.getElementById('order-confirmation').style.display = 'none';
+          document.getElementById('items-selection').style.display = 'none';
+          document.getElementById('bill-summary').style.display = 'none';
+          document.getElementById('processing-bill').style.display = 'none';
+          document.getElementById('home').style.display = 'none';
+        }
+
       </script>
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
