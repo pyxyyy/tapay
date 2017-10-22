@@ -43,6 +43,8 @@
   <title>Tapay</title>
 </head>
 
+<body>
+<div class="app">
 <body onload="document.getElementById('items-selection').style.display = 'none'; document.getElementById('order-confirmation').style.display = 'none';document.getElementById('bill-summary').style.display = 'none';document.getElementById('processing-bill').style.display = 'none';document.getElementById('payment-complete').style.display = 'none';">
 
 
@@ -52,13 +54,14 @@
     <div id="order-confirmation" class="app-nav">
 
       <div class="app">
-        <div class="app-nav">Order Confirmation<i class="fa fa-home" style="display: inline;" onclick="document.getElementById('home').style.display = 'block';document.getElementById('order-confirmation').style.display = 'none';"></i></div>
-        <div class="app-contents">
-          <table class="app-contents-table-main">
-            <tr>
-              <th>Item</th>
-              <th>Qty</th>
-              <th>Price</th>
+
+    <div class="app-nav" id="grad1">Order Confirmation<i class="fa fa-home" style="display: inline;" onclick="document.getElementById('home').style.display = 'block';document.getElementById('order-confirmation').style.display = 'none';"></i></div>
+    <div class="app-contents">
+        <table class="app-contents-table-main">
+            <tr class="app-contents-header">
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Price</th>
             </tr>
             <tr>
               <td>Cheeseburger</td>
@@ -116,12 +119,12 @@
               <td />
               <td>Price</td>
             </tr>
-          </table>
-        </div>
-        <div class="app-button-split" onclick="splitBill()">
-          Split Bill
-        </div>
-      </div>
+        </table>
+    </div>
+    <div class="app-button-split" id="grad" onclick="splitBill()">
+        Split Bill
+    </div>
+</div>
 
     </div>
 
@@ -153,7 +156,7 @@
 
   <script>
     function splitBill() {
-      document.getElementById('items-selection').style.display = 'block'; 
+      document.getElementById('items-selection').style.display = 'block';
       document.getElementById('order-confirmation').style.display = 'none';
       document.getElementById('bill-summary').style.display = 'none';
       document.getElementById('processing-bill').style.display = 'none';
@@ -182,8 +185,9 @@
     font-size: 16px;
     margin: 10px 2px;
     cursor: pointer;
-    float: middle;
   }
 </style>
 
+</div>
+</body>
 </html>
